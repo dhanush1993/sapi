@@ -120,6 +120,41 @@
           }
         }
       }
+    },
+    "spotify-v1": {
+      "projectType": "library",
+      "root": "projects/spotify-v1",
+      "sourceRoot": "projects/spotify-v1/src",
+      "prefix": "sapi",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/spotify-v1/tsconfig.lib.json",
+            "project": "projects/spotify-v1/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/spotify-v1/src/test.ts",
+            "tsConfig": "projects/spotify-v1/tsconfig.spec.json",
+            "karmaConfig": "projects/spotify-v1/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/spotify-v1/tsconfig.lib.json",
+              "projects/spotify-v1/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "spotify-api-v1"
 }
