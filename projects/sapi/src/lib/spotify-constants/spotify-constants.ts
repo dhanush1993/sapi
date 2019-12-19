@@ -45,6 +45,7 @@ export class SpotifyConstants {
     Endpoints for retrieving information about, and managing, tracks that the current user has saved in their “Your Music” library.
   */
   static readonly BASE_LIBRARY_CHECK_SAVED_ALBUMS_URI = `/me/albums/contains`
+  static readonly LIBRARY_CHECK_SAVED_ALBUMS_URI = SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+SpotifyConstants.BASE_LIBRARY_CHECK_SAVED_ALBUMS_URI
   static readonly BASE_LIBRARY_CHECK_SAVED_TRACKS_URI = `/me/tracks/contains`
   static readonly BASE_LIBRARY_SAVED_ALBUMS_URI = `/me/albums`
   static readonly BASE_LIBRARY_SAVED_TRACKS_URI = `/me/tracks`
