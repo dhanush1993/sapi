@@ -84,8 +84,11 @@ export class SpotifyConstants {
   static readonly BASE_TRACK_FEATURES_URI = `/audio-features`
   static readonly TRACK_FEATURES_URI = SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+SpotifyConstants.BASE_TRACK_FEATURES_URI
   static readonly BASE_TRACK_URI = `/tracks`
+  static readonly TRACK_URI = SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+SpotifyConstants.BASE_TRACK_URI
   static readonly BASE_CURRENT_PROFILE = `/me`
+  static readonly CURRENT_PROFILE = SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+SpotifyConstants.BASE_CURRENT_PROFILE
   static readonly BASE_USER_PROFILE = `/users`
+  static readonly USER_PROFILE = SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+SpotifyConstants.BASE_USER_PROFILE
   /*
     Endpoints for authorization and authentication
   */
