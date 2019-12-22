@@ -303,9 +303,17 @@ export class SpotifyService implements ISpotify{
     this.requests.get(SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+`/playlists/${id}/followers`,header)
   }
 
-  containsAlbum(album: string | Album | Album[] | string[]): Promise<boolean> {
+  containsAlbum(album: string | Album): Promise<boolean> {
+    const header = this.getHeaders()
+    const id = this.getIDHelper(album, Album)
+    return this.requests.get<boolean>(SpotifyConstants.LIBRARY_CHECK_SAVED_ALBUMS_URI+`?ids=${id}`,header)
+
+  }
+
+  containsAlbums(albums:string[] | Album[]) :Promise<boolean[]> {
     throw new Error("Method not implemented.");
   }
+
   containsTrack(track: string | Track | Track[] | string[]): Promise<boolean> {
     throw new Error("Method not implemented.");
   }

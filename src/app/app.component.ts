@@ -29,14 +29,15 @@ export class AppComponent implements AfterViewInit{
       'playlist-read-collaborative',
       'playlist-modify-private',
       'playlist-modify-public',
-      'playlist-read-private'
+      'playlist-read-private',
+      'user-library-modify'
     ].join('%20')
     this.auth.setRedirectURI('https://localhost:4200')
     this.auth.setClientID('bdf36188307849058ad872df8c31e7aa')
     this.auth.setScope(scope)
     this.renderer.appendChild(this.buttonHolder.nativeElement,this.auth.getAuthButton(true))
     const spotify = this.spotify
-    this.auth.loginObserver.subscribe((status: boolean)=>{
+    this.auth.loginObserver.subscribe((status: )=>{
       spotify.audioAnalysis('3JIxjvbbDrA9ztYlNcp3yL').then((res:AudioAnalysis)=>{
         console.log(res)
       })
