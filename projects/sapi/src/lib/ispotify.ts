@@ -61,7 +61,8 @@ export interface ISpotify {
   unfollowPlaylist(playlist:string | Playlist) : void
 
   //Library
-  containsAlbum(album:string | string[] | Album | Album[]) : Promise<boolean>
+  containsAlbum(album:string | Album) : Promise<boolean>
+  containsAlbums(albums:string[] | Album[]) :Promise<boolean[]>
   containsTrack(track:string | string[] | Track | Track[]) : Promise<boolean>
   getSavedAlbums() : Promise<SavedAlbum[]>
   getSavedTracks() : Promise<SavedTrack[]>
