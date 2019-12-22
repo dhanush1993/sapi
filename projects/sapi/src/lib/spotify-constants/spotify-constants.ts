@@ -81,7 +81,9 @@ export class SpotifyConstants {
     Endpoints for retrieving information about one or more tracks from the Spotify catalog.
   */
   static readonly BASE_TRACK_ANALYSIS_URI = `/audio-analysis`
+  static readonly TRACK_ANALYSIS_URI = SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+SpotifyConstants.BASE_TRACK_ANALYSIS_URI
   static readonly BASE_TRACK_FEATURES_URI = `/audio-features`
+  static readonly TRACK_FEATURES_URI = SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+SpotifyConstants.BASE_TRACK_FEATURES_URI
   static readonly BASE_TRACK_URI = `/tracks`
   static readonly BASE_CURRENT_PROFILE = `/me`
   static readonly BASE_USER_PROFILE = `/users`

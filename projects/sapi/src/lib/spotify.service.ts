@@ -22,6 +22,8 @@ import { Device } from './models/device/device';
 import { Context } from './models/context/context';
 import { PlayHistory } from './models/play-history/play-history';
 import { CurrentlyPlaying } from './models/currently-playing/currently-playing';
+import { AudioAnalysis } from './models/audio-analysis/audio-analysis';
+import { AudioFeatures } from './models/audio-features/audio-features';
 
 @Injectable({
   providedIn: 'root'
@@ -414,11 +416,15 @@ export class SpotifyService implements ISpotify{
   search(item: string): Promise<any[]> {
     throw new Error("Method not implemented.");
   }
-  audioAnalysis(track: string | Track): Promise<import("./models/audio-analysis/audio-analysis").AudioAnalysis> {
-    throw new Error("Method not implemented.");
+  audioAnalysis(track: string | Track): Promise<AudioAnalysis> {
+    const header = this.getHeaders()
+    const id = this.getIDHelper(track, AudioAnalysis)
+    return this.requests.get<AudioAnalysis>(SpotifyConstants.TRACK_ANALYSIS_URI+`/${id}`,header)
   }
-  audioFeatures(track?: string | Track): Promise<import("./models/audio-features/audio-features").AudioFeatures> {
-    throw new Error("Method not implemented.");
+  audioFeatures(track: string | Track): Promise<AudioFeatures> {
+    const header = this.getHeaders()
+    const id = this.getIDHelper(track, AudioFeatures)
+    return this.requests.get<AudioFeatures>(SpotifyConstants.TRACK_FEATURES_URI+`/${id}`,header)
   }
   getTrack(track?: string | Track): Promise<Track[]> {
     throw new Error("Method not implemented.");
