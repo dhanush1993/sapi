@@ -3,10 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { SpotifyModule } from 'projects/sapi/src/public-api';
+import { LoginComponent } from './login/login.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    TestComponent
   ],
   imports: [
     SpotifyModule,

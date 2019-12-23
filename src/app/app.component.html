@@ -1,4 +1,4 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div #buttonHolder [hidden]='isLoggedIn'>
-</div>
+<app-login *ngIf='!loginStatus' (isLoggedIn)='isLoggedIn($event)'></app-login>
+<app-test *ngIf='loginStatus'></app-test>
 
