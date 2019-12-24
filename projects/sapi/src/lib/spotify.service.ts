@@ -307,13 +307,10 @@ export class SpotifyService implements ISpotify{
     const header = this.getHeaders()
     const id = this.getIDHelper(album, Album)
     return this.requests.get<boolean>(SpotifyConstants.LIBRARY_CHECK_SAVED_ALBUMS_URI+`?ids=${id}`,header)
-
   }
-
   containsAlbums(albums:string[] | Album[]) :Promise<boolean[]> {
     throw new Error("Method not implemented.");
   }
-
   containsTrack(track: string | Track | Track[] | string[]): Promise<boolean> {
     throw new Error("Method not implemented.");
   }
@@ -426,11 +423,18 @@ export class SpotifyService implements ISpotify{
     const id = this.getIDHelper(track, AudioFeatures)
     return this.requests.get<AudioFeatures>(SpotifyConstants.TRACK_FEATURES_URI+`/${id}`,header)
   }
-  getTrack(track?: string | Track): Promise<Track[]> {
-    throw new Error("Method not implemented.");
-  }
-  getUserProfile(user?: string | User): Promise<User> {
-    throw new Error("Method not implemented.");
+  getTrack(track: string[] | Track[]): Promise<Track[]> {
+    const header = this.getHeaders()
+    if(track.length<=0)
+      throw new ArrayException(ErrorCodes.EMPTY_LIST)
+    const id = this.getIDHelper(track, Track)
+    return this.requests.get(SpotifyConstants.TRACK_URI+`?ids=${id}`,header)
+    }
+
+  getUserProfile(user: string | User): Promise<User> {
+    const header = this.getHeaders()
+    const id = this.getIDHelper(user, User)
+    return this.requests.get<User>(SpotifyConstants.TRACK_FEATURES_URI+`/${id}`,header)
   }
   
 }

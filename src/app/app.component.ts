@@ -5,6 +5,7 @@ import { Album } from 'projects/sapi/src/lib/models/album/album';
 import { Track } from 'projects/sapi/src/lib/models/track/track';
 import { AudioAnalysis } from 'projects/sapi/src/lib/models/audio-analysis/audio-analysis';
 import { AudioFeatures } from 'projects/sapi/src/lib//models/audio-features/audio-features';
+import { User } from 'projects/sapi/src/lib/models/user/user';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -37,8 +38,8 @@ export class AppComponent implements AfterViewInit{
     this.auth.setScope(scope)
     this.renderer.appendChild(this.buttonHolder.nativeElement,this.auth.getAuthButton(true))
     const spotify = this.spotify
-    this.auth.loginObserver.subscribe((status: )=>{
-      spotify.audioAnalysis('3JIxjvbbDrA9ztYlNcp3yL').then((res:AudioAnalysis)=>{
+    this.auth.loginObserver.subscribe((status: boolean)=>{
+      spotify.getTrack('20I6sIOMTCkB6w7ryavxtO').then((res:Track)=>{
         console.log(res)
       })
     });

@@ -109,7 +109,7 @@ export interface ISpotify {
   //Tracks
   audioAnalysis(track:string | Track) : Promise<AudioAnalysis>
   audioFeatures(track:string | Track) : Promise<AudioFeatures>
-  getTrack(track?:string | Track) : Promise<Track[]>
+  getTrack(track:string[] | Track[]) : Promise<Track[]>
 
   //Profile
   getUserProfile(user?:string | User) : Promise<User>
