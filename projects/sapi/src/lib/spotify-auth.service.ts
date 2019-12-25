@@ -25,6 +25,10 @@ export class SpotifyAuthService {
     this.callback()
   }
 
+  get isLoggedIn(){
+    return this.loginObserver.asObservable()
+  }
+  
   load(client_id: string, redirect_uri: string, scopes: string){
     this.client_id = client_id
     this.redirect_uri = redirect_uri

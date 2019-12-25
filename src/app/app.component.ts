@@ -5,6 +5,8 @@ import { Album } from 'projects/sapi/src/lib/models/album/album';
 import { Track } from 'projects/sapi/src/lib/models/track/track';
 import { AudioAnalysis } from 'projects/sapi/src/lib/models/audio-analysis/audio-analysis';
 import { AudioFeatures } from 'projects/sapi/src/lib//models/audio-features/audio-features';
+import { Observable, Subject } from 'rxjs';
+import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,14 +14,18 @@ import { AudioFeatures } from 'projects/sapi/src/lib//models/audio-features/audi
 })
 
 export class AppComponent{
-  loginStatus: boolean;
-  constructor(private ref: ChangeDetectorRef){
-    this.loginStatus =false
+  loginStatus: boolean
+  constructor(private ref: ChangeDetectorRef, private auth: SpotifyAuthService){
+    
+    this.auth.loginObserver.subscribe((val:boolean)=>{
+      
+      this.changeLoginStatus(val)
+    })
   }
-   
-  isLoggedIn($event){
-    this.loginStatus = true
-    this.ref.detectChanges()
+
+  changeLoginStatus($event){
+    this.loginStatus = $event
   }
+  
   
 }
