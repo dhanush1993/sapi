@@ -427,7 +427,10 @@ export class SpotifyService implements ISpotify{
     return this.requests.get<AudioFeatures>(SpotifyConstants.TRACK_FEATURES_URI+`/${id}`,header)
   }
   getTrack(track?: string | Track): Promise<Track[]> {
-    throw new Error("Method not implemented.");
+    const header = this.getHeaders()
+    const id = this.getIDHelper(track, Track)
+    return this.requests.get<Track[]>(SpotifyConstants.TRACK_URI+`?ids=${id}`,header)
+
   }
   getUserProfile(user?: string | User): Promise<User> {
     throw new Error("Method not implemented.");
