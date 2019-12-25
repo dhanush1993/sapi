@@ -433,7 +433,13 @@ export class SpotifyService implements ISpotify{
 
   }
   getUserProfile(user?: string | User): Promise<User> {
-    throw new Error("Method not implemented.");
+    const header = this.getHeaders()
+    const id = this.getIDHelper(user, User)
+    return this.requests.get<User>(SpotifyConstants.USER_PROFILE+`/${id}`,header)
+  }
+  getCurrentUserProfile(): Promise<User> {
+    const header = this.getHeaders()
+    return this.requests.get<User>(SpotifyConstants.CURRENT_PROFILE,header)
   }
   
 }

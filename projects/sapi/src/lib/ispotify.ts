@@ -113,4 +113,5 @@ export interface ISpotify {
 
   //Profile
   getUserProfile(user?:string | User) : Promise<User>
+  getCurrentUserProfile() : Promise<User>
 }
