@@ -4,6 +4,7 @@ import { AudioAnalysis } from 'projects/sapi/src/lib/models/audio-analysis/audio
 import { ServiceModel } from './service-model/service-model.module';
 import { Track } from 'projects/sapi/src/lib/models/track/track';
 import { User } from 'projects/sapi/src/lib/models/user/user';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-test',
@@ -12,16 +13,19 @@ import { User } from 'projects/sapi/src/lib/models/user/user';
 })
 export class TestComponent implements OnInit {
 
+  service$: BehaviorSubject<ServiceModel>
+
   constructor(private spotify: SpotifyService) { }
-  service: ServiceModel
+  
   ngOnInit() {
+    this.service$ = new BehaviorSubject<ServiceModel>(new ServiceModel('None', [], false))
     this.spotify.getCurrentUserProfile().then((res:User)=>{
       console.log(res)
     })
   }
 
   updateService(service: ServiceModel){
-    this.service = service
+    this.service$.next(service)
   }
 
 

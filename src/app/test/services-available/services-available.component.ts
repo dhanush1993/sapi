@@ -28,7 +28,6 @@ export class ServicesAvailableComponent implements OnInit {
       self.services.push(service)
       if(isActive){
         self.currentService = service
-        self.selectedService.emit(service)
       }
       isActive = false
     })
@@ -43,7 +42,7 @@ export class ServicesAvailableComponent implements OnInit {
    }
 
   ngOnInit() {
-    
+    this.update(this.currentService)
     
     
   }

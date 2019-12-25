@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ServiceModel } from '../service-model/service-model.module';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-service-params',
@@ -9,9 +10,12 @@ import { ServiceModel } from '../service-model/service-model.module';
 export class ServiceParamsComponent implements OnInit {
 
   constructor() { }
-
-  @Input() service: ServiceModel
+  service: ServiceModel 
+  @Input() serviceObservable: Observable<ServiceModel>
   ngOnInit() {
+    this.serviceObservable.subscribe((service)=>{
+      this.service = service
+    })
   }
 
 }

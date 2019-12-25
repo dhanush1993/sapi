@@ -1,6 +1,7 @@
 <div class="col h-100 w-100" style="background-color: rgba(15, 255 , 255, 0.4);">
     <div class="md-form" *ngFor='let param of service.params'>
+        <label class="badge badge-light" for="{{param}}">{{param}}</label>
         <input type="text" id="{{param}}" class="form-control" mdbInput>
-        <label for="{{param}}">{{param}}</label>
+        
     </div>
 </div>

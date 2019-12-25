@@ -5,5 +5,5 @@
     
     <app-services-available class="col-2 p-0" style="height: -webkit-fill-available;" (selectedService)='updateService($event)'></app-services-available>
     <app-response class="col-7 p-0"></app-response>
-    <app-service-params class="col-3 p-0" [service]='service'></app-service-params>
+    <app-service-params class="col-3 p-0" [serviceObservable]='service$'></app-service-params>
 </div>
