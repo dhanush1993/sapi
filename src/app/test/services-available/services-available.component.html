@@ -1,0 +1,17 @@
+<div class="col h-100 w-100 scrollbar" style="background-color: rgba(15, 255 , 255, 0.4); overflow-y: auto;">
+    <div class="row">
+        <div class="form-group has-search w-100">
+            <span class="fa fa-search form-control-feedback"></span>
+            <input [formControl]="filter" type="text" class="form-control" placeholder="Search">
+          </div>
+    </div>
+
+    <div class="row w-100 p-0 m-0">
+        <ul class="list-group w-100 p-0">
+            <li [ngClass]="service.isActive?'active':''" class="list-group-item list-group-item-custom"  *ngFor='let service of filteredServices$ | async' (click)='update(service)'>{{service.name}}</li>
+        </ul>
+    </div>
+    <div class="row w-100" style="height: 100px;">
+
+    </div>
+</div>
