@@ -18,11 +18,12 @@ import { Artist } from 'projects/sapi/src/lib/models/artist/artist'
 export class TestComponent implements OnInit {
 
   service$: BehaviorSubject<ServiceModel>
-
+  viewer$: BehaviorSubject<string>
   constructor(private spotify: SpotifyService) { }
   
   ngOnInit() {
     this.service$ = new BehaviorSubject<ServiceModel>(new ServiceModel('None', [], false))
+    this.viewer$ = new BehaviorSubject<string>('')
     this.spotify.getUserTopTracks().then((res:Paging<Track[]>)=>{
       console.log(res)
     })
@@ -30,6 +31,10 @@ export class TestComponent implements OnInit {
 
   updateService(service: ServiceModel){
     this.service$.next(service)
+  }
+
+  printResponse($event){
+    this.viewer$.next($event)
   }
 
 
