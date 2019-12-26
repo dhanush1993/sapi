@@ -5,6 +5,10 @@ import { ServiceModel } from './service-model/service-model.module';
 import { Track } from 'projects/sapi/src/lib/models/track/track';
 import { User } from 'projects/sapi/src/lib/models/user/user';
 import { BehaviorSubject } from 'rxjs';
+import { SavedAlbum } from 'projects/sapi/src/lib/models/saved-album/saved-album';
+import { Paging } from 'projects/sapi/src/lib/models/paging/paging';
+import { SavedTrack } from 'projects/sapi/src/lib/models/saved-track/saved-track';
+import { Artist } from 'projects/sapi/src/lib/models/artist/artist'
 
 @Component({
   selector: 'app-test',
@@ -19,7 +23,7 @@ export class TestComponent implements OnInit {
   
   ngOnInit() {
     this.service$ = new BehaviorSubject<ServiceModel>(new ServiceModel('None', [], false))
-    this.spotify.search('roadhouse%20blues').then((res:any)=>{
+    this.spotify.getUserTopTracks().then((res:Paging<Track[]>)=>{
       console.log(res)
     })
   }

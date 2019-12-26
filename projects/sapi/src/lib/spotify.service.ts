@@ -317,11 +317,13 @@ export class SpotifyService implements ISpotify{
   containsTrack(track: string | Track | Track[] | string[]): Promise<boolean> {
     throw new Error("Method not implemented.");
   }
-  getSavedAlbums(): Promise<SavedAlbum[]> {
-    throw new Error("Method not implemented.");
+  getSavedAlbums(): Promise<Paging<SavedAlbum[]>> {
+    const header = this.getHeaders()
+    return this.requests.get<Paging<SavedAlbum[]>>(SpotifyConstants.LIBRARY_SAVED_ALBUMS_URI,header)
   }
-  getSavedTracks(): Promise<SavedTrack[]> {
-    throw new Error("Method not implemented.");
+  getSavedTracks(): Promise<Paging<SavedTrack[]>> {
+    const header = this.getHeaders()
+    return this.requests.get<Paging<SavedTrack[]>>(SpotifyConstants.LIBRARY_SAVED_TRACKS_URI,header)
   }
   removeSavedAlbum(album: string | Album | Album[] | string[] | SavedAlbum): Promise<boolean> {
     throw new Error("Method not implemented.");
@@ -335,11 +337,13 @@ export class SpotifyService implements ISpotify{
   saveTrack(track: string | Track | Track[] | string[] | SavedTrack): Promise<boolean> {
     throw new Error("Method not implemented.");
   }
-  getUserTopArtists(): Promise<Artist[]> {
-    throw new Error("Method not implemented.");
+  getUserTopArtists(): Promise<Paging<Artist[]>> {
+    const header = this.getHeaders()
+    return this.requests.get<Paging<Artist[]>>(SpotifyConstants.USER_TOP_ARTISTS,header)
   }
-  getUserTopTracks(): Promise<Track[]> {
-    throw new Error("Method not implemented.");
+  getUserTopTracks(): Promise<Paging<Track[]>> {
+    const header = this.getHeaders()
+    return this.requests.get<Paging<Track[]>>(SpotifyConstants.USER_TOP_TRACKS,header)
   }
   getDevices(): Promise<Device[]> {
     throw new Error("Method not implemented.");

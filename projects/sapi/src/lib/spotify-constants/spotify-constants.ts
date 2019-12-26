@@ -1,5 +1,6 @@
 /**
 * @author Dhanush Srinivasa 
+* @author Tejas Agara Chandrakumar
 * Contains endpoint constants for spotify rest api v1
 */
 export class SpotifyConstants {
@@ -47,13 +48,23 @@ export class SpotifyConstants {
   static readonly BASE_LIBRARY_CHECK_SAVED_ALBUMS_URI = `/me/albums/contains`
   static readonly LIBRARY_CHECK_SAVED_ALBUMS_URI = SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+SpotifyConstants.BASE_LIBRARY_CHECK_SAVED_ALBUMS_URI
   static readonly BASE_LIBRARY_CHECK_SAVED_TRACKS_URI = `/me/tracks/contains`
+  static readonly LIBRARY_CHECK_SAVED_TRACKS_UR = SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+SpotifyConstants.BASE_LIBRARY_CHECK_SAVED_TRACKS_URI
   static readonly BASE_LIBRARY_SAVED_ALBUMS_URI = `/me/albums`
+  static readonly LIBRARY_SAVED_ALBUMS_URI = SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+SpotifyConstants.BASE_LIBRARY_SAVED_ALBUMS_URI
   static readonly BASE_LIBRARY_SAVED_TRACKS_URI = `/me/tracks`
+  static readonly LIBRARY_SAVED_TRACKS_URI = SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+SpotifyConstants.BASE_LIBRARY_SAVED_TRACKS_URI
   /*
     Endpoints for retrieving information about the user’s listening habits.
   */
   static readonly BASE_TOP_TYPE_URI = `/me/top`
   /*
+  Endpoints for retrieving personalization information
+  */
+ static readonly BASE_USER_TOP_ARTISTS = `/me/top/artists`
+ static readonly USER_TOP_ARTISTS = SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+SpotifyConstants.BASE_USER_TOP_ARTISTS
+ static readonly BASE_USER_TOP_TRACKS = `/me/top/tracks`
+ static readonly USER_TOP_TRACKS = SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+SpotifyConstants.BASE_USER_TOP_TRACKS
+ /*
     These endpoints are in Beta. While we encourage you to build with them, 
     a situation may arise where we need to disable some or all of the functionality 
     and/or change how they work without prior notice. Please report any issues via 

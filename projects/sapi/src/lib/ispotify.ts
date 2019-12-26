@@ -64,16 +64,16 @@ export interface ISpotify {
   containsAlbum(album:string | Album) : Promise<boolean>
   containsAlbums(albums:string[] | Album[]) :Promise<boolean[]>
   containsTrack(track:string | string[] | Track | Track[]) : Promise<boolean>
-  getSavedAlbums() : Promise<SavedAlbum[]>
-  getSavedTracks() : Promise<SavedTrack[]>
+  getSavedAlbums() : Promise<Paging<SavedAlbum[]>>
+  getSavedTracks() : Promise<Paging<SavedTrack[]>>
   removeSavedAlbum(album:string | string[] | SavedAlbum | Album | Album[]) : Promise<boolean>
   removeSavedTrack(track:string | string[] | SavedTrack | Track | Track[]) : Promise<boolean>
   saveAlbum(album:string | string[] | SavedAlbum | Album | Album[]) : Promise<boolean>
   saveTrack(track:string | string[] | SavedTrack | Track | Track[]) : Promise<boolean>
 
   //Personalization
-  getUserTopArtists() : Promise<Artist[]>
-  getUserTopTracks() : Promise<Track[]>
+  getUserTopArtists() : Promise<Paging<Artist[]>>
+  getUserTopTracks() : Promise<Paging<Track[]>>
 
   //Player
   getDevices() : Promise<Device[]>
