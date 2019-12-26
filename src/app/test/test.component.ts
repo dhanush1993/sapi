@@ -19,7 +19,7 @@ export class TestComponent implements OnInit {
   
   ngOnInit() {
     this.service$ = new BehaviorSubject<ServiceModel>(new ServiceModel('None', [], false))
-    this.spotify.getCurrentUserProfile().then((res:User)=>{
+    this.spotify.search('roadhouse%20blues').then((res:any)=>{
       console.log(res)
     })
   }

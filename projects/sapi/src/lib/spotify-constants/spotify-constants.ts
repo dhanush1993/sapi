@@ -76,7 +76,9 @@ export class SpotifyConstants {
     Endpoints for retrieving information about a user’s playlists and for managing a user’s playlists.  
   */
   static readonly BASE_PLAYLIST_CURRENT_USER_URI = `/me/playlists`
+  static readonly PLAYLIST_CURRENT_USER_URI = SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+SpotifyConstants.BASE_PLAYLIST_CURRENT_USER_URI
   static readonly BASE_SEARCH = `/search`
+  static readonly SEARCH = SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+SpotifyConstants.BASE_SEARCH
   /*
     Endpoints for retrieving information about one or more tracks from the Spotify catalog.
   */

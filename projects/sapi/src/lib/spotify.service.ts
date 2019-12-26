@@ -413,8 +413,9 @@ export class SpotifyService implements ISpotify{
   uploadCoverImage(playlist: string | Playlist, image: import("./models/image/image").Image | import("./models/image/image").Image[]): Promise<boolean> {
     throw new Error("Method not implemented.");
   }
-  search(item: string): Promise<any[]> {
-    throw new Error("Method not implemented.");
+  search(item: string): Promise<Paging<any[]>> {
+    const header = this.getHeaders()
+    return this.requests.get<any>(SpotifyConstants.SEARCH+`?q=${item}&type=track`,header)
   }
   audioAnalysis(track: string | Track): Promise<AudioAnalysis> {
     const header = this.getHeaders()

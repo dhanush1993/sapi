@@ -104,7 +104,7 @@ export interface ISpotify {
   uploadCoverImage(playlist:string | Playlist, image : Image | Image[]) : Promise<boolean>
 
   //Search
-  search(item: string) : Promise<any[]>
+  search(item: string) : Promise<Paging<any[]>>
 
   //Tracks
   audioAnalysis(track:string | Track) : Promise<AudioAnalysis>
