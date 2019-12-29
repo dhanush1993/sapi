@@ -9,6 +9,7 @@ import { ServicesAvailableComponent } from './test/services-available/services-a
 import { ResponseComponent } from './test/response/response.component';
 import { ServiceParamsComponent } from './test/service-params/service-params.component';
 import { TitlebarComponent } from './test/titlebar/titlebar.component';
+import { BgComponent } from './login/bg/bg.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TitlebarComponent } from './test/titlebar/titlebar.component';
     ServicesAvailableComponent,
     ResponseComponent,
     ServiceParamsComponent,
-    TitlebarComponent
+    TitlebarComponent,
+    BgComponent
   ],
   imports: [
     SpotifyModule,
