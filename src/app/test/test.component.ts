@@ -22,18 +22,23 @@ import { CurrentlyPlaying } from 'projects/sapi/src/lib/models/currently-playing
 export class TestComponent implements OnInit {
 
   service$: BehaviorSubject<ServiceModel>
-
+  viewer$: BehaviorSubject<string>
   constructor(private spotify: SpotifyService) { }
   
   ngOnInit() {
     this.service$ = new BehaviorSubject<ServiceModel>(new ServiceModel('None', [], false))
-    this.spotify.getRecentlyPlayed().then((res:Paging<PlayHistory>)=>{
+    this.viewer$ = new BehaviorSubject<string>('')
+    this.spotify.getUserTopTracks().then((res:Paging<Track[]>)=>{
       console.log(res)
     })
   }
 
   updateService(service: ServiceModel){
     this.service$.next(service)
+  }
+
+  printResponse($event){
+    this.viewer$.next($event)
   }
 
 
