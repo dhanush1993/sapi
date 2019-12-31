@@ -71,18 +71,31 @@ export class SpotifyConstants {
     our GitHub issue tracker.
   */
   static readonly BASE_PLAYER_DEVICES_URI = `/me/player/devices`
+  static readonly PLAYER_DEVICES_URI = SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+SpotifyConstants.BASE_PLAYER_DEVICES_URI
   static readonly BASE_PLAYER_CURRENT_PLAYBACK_URI = `/me/player`
-  static readonly BASE_PLAYER_RECENTLY_PLAYED_URI = `me/player/recently-played`
-  static readonly BASE_PLAYER_CURRENTLY_PLAYING_URI = `me/player/currently-playing`
+  static readonly PLAYER_CURRENT_PLAYBACK_URI = SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+SpotifyConstants.BASE_PLAYER_CURRENT_PLAYBACK_URI
+  static readonly BASE_PLAYER_RECENTLY_PLAYED_URI = `/me/player/recently-played`
+  static readonly PLAYER_RECENTLY_PLAYED_URI = SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+SpotifyConstants.BASE_PLAYER_RECENTLY_PLAYED_URI
+  static readonly BASE_PLAYER_CURRENTLY_PLAYING_URI = `/me/player/currently-playing`
+  static readonly PLAYER_CURRENTLY_PLAYING_URI = SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+SpotifyConstants.BASE_PLAYER_CURRENTLY_PLAYING_URI
   static readonly BASE_PLAYER_PAUSE_URI = `/me/player/pause`
+  static readonly PLAYER_PAUSE_URI = SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+SpotifyConstants.BASE_PLAYER_PAUSE_URI
   static readonly BASE_PLAYER_SEEK_URI = `/me/player/seek`
+  static readonly PLAYER_SEEK_URI = SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+SpotifyConstants.BASE_PLAYER_SEEK_URI
   static readonly BASE_PLAYER_REPEAT_MODE_URI = `/me/player/repeat`
+  static readonly PLAYER_REPEAT_MODE_URI = SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+SpotifyConstants.BASE_PLAYER_REPEAT_MODE_URI
   static readonly BASE_PLAYER_VOLUME_URI = `/me/player/volume`
+  static readonly PLAYER_VOLUME_URI = SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+SpotifyConstants.BASE_PLAYER_VOLUME_URI
   static readonly BASE_PLAYER_NEXT_URI = `/me/player/next`
+  static readonly PLAYER_NEXT_URI = SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+SpotifyConstants.BASE_PLAYER_NEXT_URI
   static readonly BASE_PLAYER_PREVIOUS_URI = `/me/player/previous`
+  static readonly PLAYER_PREVIOUS_URI = SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+SpotifyConstants.BASE_PLAYER_PREVIOUS_URI
   static readonly BASE_PLAYER_PLAY_URI = `/me/player/play`
+  static readonly PLAYER_PLAY_URI = SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+SpotifyConstants.BASE_PLAYER_PLAY_URI
   static readonly BASE_PLAYER_SHUFFLE_URI = `/me/player/shuffle`
+  static readonly PLAYER_SHUFFLE_URI = SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+SpotifyConstants.BASE_PLAYER_SHUFFLE_URI
   static readonly BASE_PLAYER = `/me/player`
+  static readonly PLAYER = SpotifyConstants.PROTOCOL+SpotifyConstants.ENDPOINT_BASE_URI+SpotifyConstants.BASE_PLAYER
   /*
     Endpoints for retrieving information about a user’s playlists and for managing a user’s playlists.  
   */

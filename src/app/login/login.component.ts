@@ -33,7 +33,8 @@ export class LoginComponent implements AfterViewInit {
       'playlist-modify-public',
       'playlist-read-private',
       'user-library-modify',
-      'user-library-read'
+      'user-library-read',
+      'user-read-recently-played'
     ].join('%20')
     this.auth.setRedirectURI('https://localhost:4200')
     this.auth.setClientID('bdf36188307849058ad872df8c31e7aa')

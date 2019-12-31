@@ -78,7 +78,7 @@ export interface ISpotify {
   //Player
   getDevices() : Promise<Device[]>
   getPlaybackInfo() : Promise<Context>
-  getRecentlyPlayed() : Promise<PlayHistory>
+  getRecentlyPlayed() : Promise<Paging<PlayHistory>>
   getCurrentlyPlaying() : Promise<CurrentlyPlaying>
   pause() : Promise<boolean>
   seek() : Promise<boolean>

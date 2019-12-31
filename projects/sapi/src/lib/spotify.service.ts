@@ -346,16 +346,20 @@ export class SpotifyService implements ISpotify{
     return this.requests.get<Paging<Track[]>>(SpotifyConstants.USER_TOP_TRACKS,header)
   }
   getDevices(): Promise<Device[]> {
-    throw new Error("Method not implemented.");
+    const header = this.getHeaders()
+    return this.requests.get<Device[]>(SpotifyConstants.PLAYER_DEVICES_URI,header)
   }
   getPlaybackInfo(): Promise<Context> {
-    throw new Error("Method not implemented.");
+    const header = this.getHeaders()
+    return this.requests.get<Context>(SpotifyConstants.PLAYER_CURRENT_PLAYBACK_URI,header)
   }
-  getRecentlyPlayed(): Promise<PlayHistory> {
-    throw new Error("Method not implemented.");
+  getRecentlyPlayed(): Promise<Paging<PlayHistory>> {
+    const header = this.getHeaders()
+    return this.requests.get<Paging<PlayHistory>>(SpotifyConstants.PLAYER_RECENTLY_PLAYED_URI,header)
   }
   getCurrentlyPlaying(): Promise<CurrentlyPlaying> {
-    throw new Error("Method not implemented.");
+    const header = this.getHeaders()
+    return this.requests.get<CurrentlyPlaying>(SpotifyConstants.PLAYER_CURRENTLY_PLAYING_URI,header)
   }
   pause(): Promise<boolean> {
     throw new Error("Method not implemented.");

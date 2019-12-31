@@ -9,6 +9,10 @@ import { SavedAlbum } from 'projects/sapi/src/lib/models/saved-album/saved-album
 import { Paging } from 'projects/sapi/src/lib/models/paging/paging';
 import { SavedTrack } from 'projects/sapi/src/lib/models/saved-track/saved-track';
 import { Artist } from 'projects/sapi/src/lib/models/artist/artist'
+import { Device } from 'projects/sapi/src/lib/models/device/device';
+import { Context } from 'projects/sapi/src/lib/models/context/context';
+import { PlayHistory } from 'projects/sapi/src/lib/models/play-history/play-history';
+import { CurrentlyPlaying } from 'projects/sapi/src/lib/models/currently-playing/currently-playing';
 
 @Component({
   selector: 'app-test',
@@ -23,7 +27,7 @@ export class TestComponent implements OnInit {
   
   ngOnInit() {
     this.service$ = new BehaviorSubject<ServiceModel>(new ServiceModel('None', [], false))
-    this.spotify.getUserTopTracks().then((res:Paging<Track[]>)=>{
+    this.spotify.getRecentlyPlayed().then((res:Paging<PlayHistory>)=>{
       console.log(res)
     })
   }
